@@ -1,0 +1,32 @@
+{
+  "doramas": [
+    {
+      "id": 1,
+      "titulo": "O Grande Desafio",
+      "descricao": "Uma série épica que explora os desafios e triunfos de um jovem lutador",
+      "idGenero": 3,
+      "anoDeLancamento": 2024
+    },
+    {
+      "id": 2,
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "idGenero": 2,
+      "anoDeLancamento": 2024
+    }
+  ],
+  "genero": [
+    {
+      "id": 1,
+      "genero": "Drama"
+    },
+    {
+      "id": 2,
+      "genero": "Romance"
+    },
+    {
+      "id": 3,
+      "genero": "Ação"
+    }
+  ]
+}
