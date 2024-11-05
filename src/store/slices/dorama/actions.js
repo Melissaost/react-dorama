@@ -63,7 +63,7 @@ export const saveForm =
 
 export const deleteDorama = (dorama) => async (dispatch) => {
   Swal.fire({
-    title: `Deseja excluir o dorama ${dorama.nome}`,
+    title: `Deseja excluir o dorama ${dorama.titulo}`,
     text: "Após a exclusão essa tarefa não poderá ser desfeita.",
     icon: "info",
     showCancelButton: true,
@@ -77,7 +77,7 @@ export const deleteDorama = (dorama) => async (dispatch) => {
         await DoramaApi.remove(dorama.id);
         Swal.fire({
           title: "Sucesso !",
-          text: `Dorama ${dorama.nome} excluído com sucesso`,
+          text: `Dorama ${dorama.titulo} excluído com sucesso`,
           icon: "success",
         });
         dispatch(getAllDoramas()); // carrega novamente a lista;

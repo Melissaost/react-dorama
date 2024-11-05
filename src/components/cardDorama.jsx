@@ -7,8 +7,8 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import { deleteDorama } from "../store/slices/dorama/actions";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { grey } from '@mui/material/colors';
+import { useDispatch } from "react-redux";
+import { grey } from "@mui/material/colors";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 //const removeDorama = (dorama) => dispatch(deleteDorama(dorama));
@@ -26,7 +26,7 @@ function CardDorama({ dorama }) {
         <Card
         sx={{
             maxWidth: 345,
-            height: 470,
+            height: 470, // Altura fixa para todos os cards
             display: "flex",
             flexDirection: "column",
         }}
@@ -34,37 +34,63 @@ function CardDorama({ dorama }) {
         <CardActionArea sx={{ flex: "0 0 auto" }}>
             <CardMedia
             component="img"
-            height="140"
+            sx={{
+                height: 200, 
+                objectFit: "cover",
+            }}
             image={`${imagePath}${dorama.imagem}`}
             alt={dorama.titulo}
             />
-            <CardContent>
+            <CardContent
+            sx={{ flex: "1 1 auto", display: "flex", flexDirection: "column" }}
+            >
             <Typography gutterBottom variant="h7" component="div">
                 {dorama.titulo}
             </Typography>
             <Typography sx={{ color: grey[400], mb: 1.5, fontSize: "0.875rem" }}>
-                {dorama.genero.genero}  - {dorama.anoDeLancamento}
+                {dorama.genero.genero} - {dorama.anoDeLancamento}
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.85rem" }}>
+            <Typography
+                variant="body2"
+                sx={{
+                color: "text.secondary",
+                fontSize: "0.85rem",
+                flexGrow: 1,
+                }}
+            >
                 {dorama.descricao}
             </Typography>
             </CardContent>
         </CardActionArea>
-        <CardActions sx={{ marginTop: "auto", display: "flex", justifyContent: "space-between" }}>
-            <Button size="small" sx={{ color: grey[700] }} onClick={() => navigate(`/detalhes/${dorama.id}`)}>
-                Saiba mais
+        <CardActions
+            sx={{
+            marginTop: "auto",
+            display: "flex",
+            justifyContent: "space-between",
+            }}
+        >
+            <Button
+            size="small"
+            sx={{ color: grey[700] }}
+            onClick={() => navigate(`/detalhes/${dorama.id}`)}
+            >
+            Saiba mais
             </Button>
             <div>
-                <button onClick={() => navigate(`/detalhes/${dorama.id}`)} 
+            <button
+                onClick={() => navigate(`/detalhes/${dorama.id}`)}
                 className="font-medium hover:underline"
-                style={{ color: grey[700] }}>
-                    <FaEdit />
-                </button>
-                <button onClick={() => removeDorama(dorama)} 
-                    className="font-medium hover:underline ml-2"
-                    style={{ color: grey[700] }}>
-                    <FaTrash />
-                </button>
+                style={{ color: grey[700] }}
+            >
+                <FaEdit />
+            </button>
+            <button
+                onClick={() => removeDorama(dorama)}
+                className="font-medium hover:underline ml-2"
+                style={{ color: grey[700] }}
+            >
+                <FaTrash />
+            </button>
             </div>
         </CardActions>
         </Card>
