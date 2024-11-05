@@ -7,7 +7,7 @@ function Footer() {
             <a href="https://infnet.edu.br" className="hover:underline">
               Infnet
             </a>
-            . &copy;Todos os direitos reservados..
+            . &copy;Todos os direitos reservados.
           </span>
         </div>
       </footer>

@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { editForm, saveForm } from "../store/slices/dorama/actions";
 import { useNavigate } from "react-router-dom";
+import { getAllGeneros } from "../store/slices/genero/actions";
+import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
 function Form({ isEdit }) {
@@ -8,12 +10,28 @@ function Form({ isEdit }) {
   const navigate = useNavigate();
   const dorama = useSelector((state) => state.dorama.detalhe);
 
-  const changeField = (field, value) => dispatch(editForm(field, value));
+  //ciclo de vida do componente
+  useEffect(() => {
+    dispatch(getAllGeneros());
+  }, []);
+  const { generos, loading } = useSelector((state) => state.genero);
 
+  const changeField = (field, value) => dispatch(editForm(field, value));
   const submitForm = () => dispatch(saveForm(isEdit)).then(() => navigate("/"));
 
+
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
+
+  const handleGeneroChange = (e) => {
+    const selectedId = e.target.value;
+    const selectedGenero = generos.find((g) => g.id === selectedId);
+    changeField("genero", selectedGenero);
+};
+
   return (
-    <div className="cadastro p-[10%] h-[82vh]">
+    <div className="cadastro p-[5%] h-[82vh]">
       <div>
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <div>
@@ -35,20 +53,27 @@ function Form({ isEdit }) {
           </div>
           <div>
             <label
-              htmlFor="idGenero"
+              htmlFor="genero"
               className="block mb-2 text-sm font-medium text-gray-900 "
             >
               Gênero
             </label>
-            <input
-              type="text"
-              id="idGenero"
-              onChange={(e) => changeField("idGenero", e.target.value)}
-              placeholder="Digite o gênero"
-              value={dorama?.idGenero || ""}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              required
-            />
+            <select
+                id="idGenero"
+                onChange={handleGeneroChange}
+                value={dorama?.genero?.id || ""}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+            >
+                <option value="" disabled>
+                    Selecione o gênero
+                </option>
+                {generos.map((g) => (
+                    <option key={g.id} value={g.id}>
+                        {g.genero}
+                    </option>
+                ))}
+            </select>
           </div>
         </div>
         <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -65,6 +90,23 @@ function Form({ isEdit }) {
               onChange={(e) => changeField("anoDeLancamento", e.target.value)}
               placeholder="Digite o ano de lançamento"
               value={dorama?.anoDeLancamento || ""}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="imagem"
+              className="block mb-2 text-sm font-medium text-gray-900 "
+            >
+              Imagem
+            </label>
+            <input
+              type="imagem"
+              id="imagem"
+              onChange={(e) => changeField("imagem", e.target.value)}
+              placeholder="Digite o caminho da imagem"
+              value={dorama?.imagem || ""}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
@@ -90,7 +132,7 @@ function Form({ isEdit }) {
         <button
           type="submit"
           onClick={submitForm}
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white bg-blue-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
         >
           Salvar
         </button>

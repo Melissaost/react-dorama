@@ -1,31 +1,94 @@
 {
   "doramas": [
     {
-      "id": 1,
-      "titulo": "O Grande Desafio",
-      "descricao": "Uma série épica que explora os desafios e triunfos de um jovem lutador",
-      "idGenero": 3,
-      "anoDeLancamento": 2024
+      "id": "1",
+      "titulo": "O que há de Errado com a Secretária Kim?",
+      "descricao": "Um presidente narcisista de uma grande corporação, Lee Young-joon, e sua altamente capacitada secretária, Kim Mi-so. Mal-entendidos surgem quando ela anuncia que vai renunciar de sua posição, depois de trabalhar para Lee Young-joon por nove anos.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2018,
+      "imagem": "O-que-ha-de-errado-com-a-secretaria-Kim.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Lovely Runner",
       "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
-      "idGenero": 2,
-      "anoDeLancamento": 2024
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg"
+    },
+    {
+      "id": "3",
+      "titulo": "The Good Bad Mother",
+      "descricao": "Um acidente trágico deixa um ambicioso promotor com a mente de uma criança. Agora, ele e a mãe precisam viver uma jornada rumo à reaproximação.",
+      "genero": {
+        "id": 2,
+        "genero": "Drama"
+      },
+      "anoDeLancamento": 2023,
+      "imagem": "the-good-bad-mother.jpeg"
+    },
+    {
+      "id": "4",
+      "titulo": "Amor Oculto",
+      "descricao": "Uma garota desenvolve uma paixão ingênua pelo amigo do irmão mais velho. Anos mais tarde, eles se reencontram e têm a oportunidade de viver um romance de verdade, não só nos sonhos.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2023,
+      "imagem": "amor-oculto.jpeg"
+    },
+    {
+      "id": "5",
+      "titulo": "Something in the Rain ",
+      "descricao": "Uma mulher reencontra o irmão da melhor amiga, que acaba de voltar de uma temporada no exterior, e passa a enxergá-lo com um novo olhar.",
+      "genero": {
+        "id": 1,
+        "genero": "Drama"
+      },
+      "anoDeLancamento": 2018,
+      "imagem": "something-in-the-rain.jpeg"
+    },
+    {
+      "id": "6",
+      "titulo": "Pretendente Surpresa",
+      "descricao": "Ha-ri vai a um encontro às cegas se passando pela amiga e pronta para dispensar o pretendente. Mas o plano dá errado, e ele acaba fazendo uma proposta para ela.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2022,
+      "imagem": "pretendente-surpresa.jpeg"
+    },
+    {
+      "id": "615d",
+      "titulo": "Rainha das Lágrimas",
+      "genero": {
+        "id": "2",
+        "genero": "Romance"
+      },
+      "anoDeLancamento": "2024",
+      "descricao": "A rainha das lojas de departamento e seu marido do interior enfrentam uma crise conjugal. Até que o amor milagrosamente volta a florescer.",
+      "imagem": "rainhadaslagrimas.jpg"
     }
   ],
-  "genero": [
+  "generos": [
     {
-      "id": 1,
+      "id": "1",
       "genero": "Drama"
     },
     {
-      "id": 2,
+      "id": "2",
       "genero": "Romance"
     },
     {
-      "id": 3,
+      "id": "3",
       "genero": "Ação"
     }
   ]
