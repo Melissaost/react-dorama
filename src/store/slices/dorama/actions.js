@@ -1,4 +1,5 @@
 import DoramaApi from "../../../services/dorama-api";
+import ResenhaApi from "../../../services/resenha-api";
 import { setDoramas, setDetalhes, setLoading } from "./reducer";
 import Swal from "sweetalert2";
 
@@ -61,38 +62,37 @@ export const saveForm =
     }
   };
 
-export const deleteDorama = (dorama) => async (dispatch) => {
-  Swal.fire({
-    title: `Deseja excluir o dorama ${dorama.titulo}`,
-    text: "Após a exclusão essa tarefa não poderá ser desfeita.",
-    icon: "info",
-    showCancelButton: true,
-    cancelButtonText: "Cancelar",
-    cancelButtonColor: "#cccc",
-    confirmButtonText: "Confirmar Exclusão",
-    confirmButtonColor: "green",
-  }).then(async (result) => {
-    if (result.isConfirmed) {
-      try {
-        await DoramaApi.remove(dorama.id);
-        Swal.fire({
-          title: "Sucesso !",
-          text: `Dorama ${dorama.titulo} excluído com sucesso`,
-          icon: "success",
-        });
-        dispatch(getAllDoramas()); // carrega novamente a lista;
-      } catch (error) {
-        // Existe 2 possibilidades de tratamento de error
-        // 1 - Retornar diretamente da API (caso incomun)
-        // 2 - Fazer o tratamento diretamento no frontend (comum)
-
-        console.log(error.message);
-        Swal.fire({
-          title: "Ops !!!",
-          text: error.message || `Aconteceu um erro ao tentar deletar`,
-          icon: "error",
-        });
+  export const deleteDorama = (dorama) => async (dispatch) => {
+    Swal.fire({
+      title: `Deseja excluir o dorama ${dorama.titulo}?`,
+      text: "Após a exclusão, esta tarefa não poderá ser desfeita.",
+      icon: "info",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      cancelButtonColor: "#cccc",
+      confirmButtonText: "Confirmar Exclusão",
+      confirmButtonColor: "green",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await ResenhaApi.remove(dorama.id);
+          await DoramaApi.remove(dorama.id);
+  
+          Swal.fire({
+            title: "Sucesso!",
+            text: `Dorama ${dorama.titulo} e suas resenhas excluídos com sucesso.`,
+            icon: "success",
+          });
+  
+          // Dispara a ação para atualizar a lista de doramas
+          dispatch(getAllDoramas());
+        } catch (error) {
+          Swal.fire({
+            title: "Ops!!!",
+            text: error.message || "Aconteceu um erro ao tentar deletar",
+            icon: "error",
+          });
+        }
       }
-    }
-  });
-};
+    });
+  };

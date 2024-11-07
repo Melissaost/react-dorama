@@ -11,8 +11,6 @@ import { useDispatch } from "react-redux";
 import { grey } from "@mui/material/colors";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-//const removeDorama = (dorama) => dispatch(deleteDorama(dorama));
-
 /* eslint-disable react/prop-types */
 function CardDorama({ dorama }) {
     const dispatch = useDispatch();
@@ -26,12 +24,12 @@ function CardDorama({ dorama }) {
         <Card
         sx={{
             maxWidth: 345,
-            height: 470, // Altura fixa para todos os cards
+            height: 470,
             display: "flex",
             flexDirection: "column",
         }}
         >
-        <CardActionArea sx={{ flex: "0 0 auto" }}>
+        <CardActionArea sx={{ flex: "0 0 auto" }} onClick={() => navigate(`/resenhas/${dorama.id}`)}>
             <CardMedia
             component="img"
             sx={{
@@ -72,9 +70,9 @@ function CardDorama({ dorama }) {
             <Button
             size="small"
             sx={{ color: grey[700] }}
-            onClick={() => navigate(`/detalhes/${dorama.id}`)}
+            onClick={() => navigate(`/resenhas/${dorama.id}`)}
             >
-            Saiba mais
+            Resenhas
             </Button>
             <div>
             <button

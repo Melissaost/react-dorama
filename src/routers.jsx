@@ -6,6 +6,8 @@ import Detalhes from "./pages/detalhes";
 import Cadastro from "./pages/cadastro";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Resenhas from "./pages/resenhas";
+import AdicionarResenha from "./pages/adicionarResenha";
 
 function Routers() {
   return (
@@ -16,6 +18,8 @@ function Routers() {
             <Route path="/" Component={Initial} />
             <Route path="/cadastro" Component={Cadastro} />
             <Route path="/detalhes/:id?" Component={Detalhes} />
+            <Route path="/resenhas/:id?" Component={Resenhas} />
+            <Route path="/adicionar-resenha/:id?" Component={AdicionarResenha} />
           </Routes>
         </Layout>
       </BrowserRouter>

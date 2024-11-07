@@ -68,11 +68,11 @@
     },
     {
       "id": "23e1",
+      "titulo": "Rainha das Lágrimas",
       "genero": {
         "id": "2",
         "genero": "Romance"
       },
-      "titulo": "Rainha das Lágrimas",
       "anoDeLancamento": "2024",
       "descricao": "A rainha das lojas de departamento e seu marido do interior enfrentam uma crise conjugal. Até que o amor milagrosamente volta a florescer.",
       "imagem": "rainhadaslagrimas.jpg"
@@ -91,5 +91,21 @@
       "id": "3",
       "genero": "Ação"
     }
-  ]
+  ],
+  "resenhas": [
+    {
+      "id": "1",
+      "doramaId": "1",
+      "titulo": "Ameeeeei",
+      "conteudo": "Gostei muito desse dorama!",
+      "nota":5
+    },
+    {
+        "id": "2",
+        "doramaId": "1",
+        "titulo": "Bom",
+        "conteudo": "Achei interessante, mas poderia ser melhor.",
+        "nota": 3
+      }
+    ]
 }

@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import CardDorama from "./cardDorama";
 
+/* eslint-disable react/prop-types */
 export default function CardGrid({ cards }) {
 
     return (
@@ -12,7 +13,7 @@ export default function CardGrid({ cards }) {
                     justifyContent: "center",
                     alignItems: "center",
                     flexWrap: "wrap",
-                    gap: 2,  // Espaçamento entre os cards
+                    gap: 2,
                     padding: 2,
                 }}>
                     <CardDorama dorama={dorama}/>
