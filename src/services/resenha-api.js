@@ -40,12 +40,21 @@ async function remove(doramaId) {
             })
         );
     } catch (error) {
-        throw new Error("Não foi possível deletar as resenhas");
+        throw new Error("Não foi possível deletar as resenhas.", error);
     }
 }
+
+async function create(resenha) {
+    try {
+      await http.post(`/resenhas`, resenha);
+    } catch {
+      throw new Error("## Não foi possível cadastrar");
+    }
+  }
 
 export default {
     getAll,
     getById,
-    remove
+    remove,
+    create
 };

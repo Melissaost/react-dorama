@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Grid } from "@mui/material";
 import CardResenha from "./cardResenha";
-import ApresentacaoDorama from "./apresentacaoDorama";
+import ApresentacaoDorama from "./ApresentacaoDorama";
 import { useEffect } from "react";
 import { getDetalhesDorama } from "../store/slices/dorama/actions";
 import { useNavigate } from "react-router-dom";

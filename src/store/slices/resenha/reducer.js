@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   resenhas: [],
+  detalhe: {},
   loading: false,
 };
 
@@ -14,10 +15,13 @@ export const counterSlice = createSlice({
     },
     setLoading: (state, action) => {
       state.loading = action.payload;
-    }
+    },
+    setDetalhes: (state, action) => {
+      state.detalhe = action.payload;
+    },
   },
 });
 
-export const { setResenhas, setLoading } = counterSlice.actions;
+export const { setResenhas, setLoading, setDetalhes } = counterSlice.actions;
 
 export default counterSlice.reducer;

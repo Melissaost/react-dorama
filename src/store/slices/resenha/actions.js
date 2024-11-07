@@ -1,5 +1,6 @@
 import ResenhaApi from "../../../services/resenha-api.js";
 import { setResenhas, setLoading } from "./reducer";
+import Swal from "sweetalert2";
 
 export const getAllResenhas = () => async (dispatch) => {
   dispatch(setLoading(true));
@@ -21,3 +22,28 @@ export const getResenhaDorama = (id) => async (dispatch) => {
     console.log("error", error);
   }
 };
+
+export const saveForm = (resenha) =>
+  async (dispatch) => {
+    try {
+      await ResenhaApi.create(resenha);
+      dispatch(getAllResenhas());
+
+      Swal.fire({
+        title: "Sucesso !",
+        text: `O dorama foi cadastrado com sucesso.`,
+        icon: "success",
+      });
+
+      return Promise.resolve();
+    } catch {
+      Swal.fire({
+        title: "Erro!",
+        text: `Aconteceu um erro ao cadastrar o dorama.`,
+        icon: "error",
+      });
+      throw new Error(
+        `Não foi possível cadastrar`,
+      );
+    }
+  };

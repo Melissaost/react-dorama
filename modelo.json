@@ -76,6 +76,66 @@
       "anoDeLancamento": "2024",
       "descricao": "A rainha das lojas de departamento e seu marido do interior enfrentam uma crise conjugal. Até que o amor milagrosamente volta a florescer.",
       "imagem": "rainhadaslagrimas.jpg"
+    },
+    {
+      "id": "2",
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg",
+      "nota": 5
+    },
+    {
+      "id": "2",
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg",
+      "nota": 5
+    },
+    {
+      "id": "2",
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg",
+      "nota": 5
+    },
+    {
+      "id": "2",
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg",
+      "nota": 5
+    },
+    {
+      "id": "2",
+      "titulo": "Lovely Runner",
+      "descricao": "A série segue a jornada de Im Sol, uma grande fã do ídolo coreano Ryu Sun-jae. Sol, uma outrora promissora diretora de cinema cujos sonhos foram destruídos por um acidente que a deixou paralisada, encontra consolo nas músicas compostas por Sun-jae.",
+      "genero": {
+        "id": 2,
+        "genero": "Romance"
+      },
+      "anoDeLancamento": 2024,
+      "imagem": "lovelly-runner.jpg",
+      "nota": 5
     }
   ],
   "generos": [
@@ -98,14 +158,21 @@
       "doramaId": "1",
       "titulo": "Ameeeeei",
       "conteudo": "Gostei muito desse dorama!",
-      "nota":5
+      "nota": 5
     },
     {
-        "id": "2",
-        "doramaId": "1",
-        "titulo": "Bom",
-        "conteudo": "Achei interessante, mas poderia ser melhor.",
-        "nota": 3
-      }
-    ]
+      "id": "2",
+      "doramaId": "1",
+      "titulo": "Bom",
+      "conteudo": "Achei interessante, mas poderia ser melhor.",
+      "nota": 3
+    },
+    {
+      "id": "a926",
+      "titulo": "Dorama incrivel",
+      "conteudo": "Um dos melhores de 2024. Romancezinho gostoso. O amor deles é lindo e bem cativante. Momentos de dramas na medida. Nem sei quantas vezes vi o sun-jae morrer, mas no final deu tudo certo. Amei demais. ",
+      "nota": 5,
+      "doramaId": "2"
+    }
+  ]
 }
