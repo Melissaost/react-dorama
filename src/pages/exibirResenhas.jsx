@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getResenhaDorama } from "../store/slices/resenha/actions";
 import { useDispatch } from "react-redux";
-import ResenhaGrid from "../components/resenhaGrid";
+import Resenhas from "../components/resenhas";
 
 
-function Resenhas() {
+function ExibirResenhas() {
   let { id } = useParams();
   const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ function Resenhas() {
     dispatch(getResenhaDorama(id));
   }, [dispatch, id]);
 
-  return <ResenhaGrid id={id} />;
+  return <Resenhas id={id} formResenha={false}/>;
 }
 
-export default Resenhas;
+export default ExibirResenhas;

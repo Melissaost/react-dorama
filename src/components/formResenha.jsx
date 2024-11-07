@@ -43,9 +43,7 @@ function FormResenha({ dorama, mediaNotas }) {
   };
 
   return (
-    <div className="cadastro pb-2 min-h-82vh flex flex-col items-center">
-      <ApresentacaoDorama dorama={dorama} nota={mediaNotas} />
-      <div className="w-1/2 mt-5">
+      <div className="w-1/2 mt-5 max-w-[600px]">
         <div className="mb-6">
           <label htmlFor="titulo" className="block mb-2 text-sm font-medium text-gray-900">
             Titulo da resenha
@@ -110,7 +108,6 @@ function FormResenha({ dorama, mediaNotas }) {
           </button>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -25,6 +25,7 @@ export default function CardResenha({ resenha }) {
               readOnly
               size="small"
               sx={{ top: -1 }}
+              precision={0.5}
             />
           </Box>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>

@@ -1,38 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
 import { Box, Grid } from "@mui/material";
 import CardResenha from "./cardResenha";
-import ApresentacaoDorama from "./ApresentacaoDorama";
-import { useEffect } from "react";
-import { getDetalhesDorama } from "../store/slices/dorama/actions";
 import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-function ResenhaGrid({ id }) {
+function ResenhaGrid({ resenhas, dorama }) {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const { resenhas, loading } = useSelector((state) => state.resenha);
-    const dorama = useSelector((state) => state.dorama.detalhe);
-    
-    useEffect(() => {
-        dispatch(getDetalhesDorama(id));
-    }, [dispatch, id]);
-
-    const calcularMediaNotas = () => {
-        if (resenhas && resenhas.length > 0) {
-            const somaNotas = resenhas.reduce((acc, resenha) => acc + resenha.nota, 0);
-            return somaNotas / resenhas.length;
-        }
-        return 0;
-    };
-    const mediaNotas = calcularMediaNotas();
-
-    if (loading) {
-        return <div>Loading...</div>; 
-    }
 
     return (
-        <Box sx={{ minHeight: "80vh", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: resenhas && resenhas.length > 0 ? "flex-start" : "center" }}>
-            <ApresentacaoDorama dorama={dorama} nota={mediaNotas} />
+        <Box>
             {(!resenhas || resenhas.length === 0) ? (
                 <div className="my-5">
                     Nenhuma resenha encontrada para o dorama: {dorama.titulo}.
