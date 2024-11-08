@@ -35,7 +35,6 @@ async function create(dorama) {
   }
 }
 async function update(dorama) {
-  // poderiam usar o axios
   try {
     await http.patch(`${pathIdentify}/${dorama.id}`, dorama);
   } catch {
@@ -47,7 +46,6 @@ async function update(dorama) {
  * @param {id} id - string
  */
 async function getById(id) {
-  // poderiam usar o axios
   try {
     return await http.get(`${pathIdentify}/${id}`);
   } catch {

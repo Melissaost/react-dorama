@@ -14,18 +14,18 @@ async function getAll() {
 }
 
 /**
- * Para obter os dados do genero
+ * Para obter as resenhas do dorama
  * @param {id} id - string
  */
 async function getById(id) {
-  // poderiam usar o axios
     try {
         const resenhas = await http.get(`/resenhas?doramaId=${id}`);
-        return resenhas;
-    } catch {
-        throw new Error("não foi possível atualizar");
+        return resenhas.data;
+    } catch (error) {
+        throw new Error("Não foi possível buscar a resenha", error);
     }
 }
+
 
 async function remove(doramaId) {
     try {
@@ -39,18 +39,18 @@ async function remove(doramaId) {
                 return http.delete(`/resenhas/${resenha.id}`);
             })
         );
-    } catch (error) {
-        throw new Error("Não foi possível deletar as resenhas.", error);
+    } catch {
+        throw new Error("Não foi possível deletar as resenhas.");
     }
 }
 
 async function create(resenha) {
     try {
-      await http.post(`/resenhas`, resenha);
+        await http.post(`/resenhas`, resenha);
     } catch {
-      throw new Error("## Não foi possível cadastrar");
+        throw new Error("## Não foi possível cadastrar");
     }
-  }
+}
 
 export default {
     getAll,

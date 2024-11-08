@@ -18,7 +18,6 @@ async function getAll() {
  * @param {id} id - string
  */
 async function getById(id) {
-  // poderiam usar o axios
   try {
     return await http.get(`/generos/${id}`);
   } catch {
