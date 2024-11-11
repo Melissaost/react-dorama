@@ -20,7 +20,8 @@ async function getAll() {
 async function getById(id) {
     try {
         const resenhas = await http.get(`/resenhas?doramaId=${id}`);
-        return resenhas.data;
+        console.log(resenhas.data)
+        return resenhas;
     } catch (error) {
         throw new Error("Não foi possível buscar a resenha", error);
     }
